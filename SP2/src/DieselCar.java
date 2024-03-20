@@ -13,22 +13,22 @@ public class DieselCar extends AFuelCar {
 
     @Override
     public int getRegistrationFee() {
-            int surcharge;
+            int amountFee;
             int kmPrLitre = getKmPrLitre();
 
             if (kmPrLitre >= 20 && kmPrLitre <= 50) {
-                surcharge = 130;
+                amountFee = 130;
             } else if (kmPrLitre >= 15 && kmPrLitre < 20) {
-                surcharge = 1390;
+                amountFee = 1390;
             } else if (kmPrLitre >= 10 && kmPrLitre < 15) {
-                surcharge = 1850;
+                amountFee = 1850;
             } else if (kmPrLitre >= 5 && kmPrLitre < 10) {
-                surcharge = 2770;
+                amountFee = 2770;
             } else {
-                surcharge = 15260;
+                amountFee = 15260;
             }
 
-            return surcharge + (hasParticleFilter() ? 0 : 1000); // Additional fee if no particle filter
+            return amountFee + (hasParticleFilter() ? 0 : 1000); // Additional fee if no particle filter
         }
 
     public boolean hasParticleFilter() {
